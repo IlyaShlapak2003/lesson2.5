@@ -1,9 +1,9 @@
 package transport;
 
-public class Auto extends Transport{
+public class Truck extends Transport{
 
 
-    public Auto(String brand, String model, float engineVolume) {
+    public Truck(String brand, String model, float engineVolume) {
         super(brand, model, engineVolume);
     }
 
