@@ -1,10 +1,10 @@
 package transport;
 
-public class Auto extends Transport{
+public class Auto extends Transport implements Competing{
 
 
-    public Auto(String brand, String model, float engineVolume) {
-        super(brand, model, engineVolume);
+    public Auto(String brand, String model, float engineVolume, float bestTime, float maxSpeed) {
+        super(brand, model, engineVolume, bestTime, maxSpeed);
     }
 
     @Override
@@ -26,5 +26,20 @@ public class Auto extends Transport{
     @Override
     public String toString() {
         return getBrand()+ " " + getModel()+ " "+getEngineVolume();
+    }
+
+    @Override
+    public String pitStop() {
+        return "Заезжаем в бокс, производим замену колес, заправляем, выезжаем из бокса";
+    }
+
+    @Override
+    public float bestTime() {
+        return getBestTime();
+    }
+
+    @Override
+    public float maxSpeed() {
+        return getMaxSpeed();
     }
 }

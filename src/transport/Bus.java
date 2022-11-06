@@ -1,9 +1,10 @@
 package transport;
 
-public class Bus extends Transport {
+public class Bus extends Transport implements Competing{
 
-    public Bus(String brand, String model, float engineVolume) {
-        super(brand, model, engineVolume);
+
+    public Bus(String brand, String model, float engineVolume, float bestTime, float maxSpeed) {
+        super(brand, model, engineVolume, bestTime, maxSpeed);
     }
 
     @Override
@@ -24,6 +25,21 @@ public class Bus extends Transport {
     @Override
     public String toString() {
         return getBrand()+ " " + getModel()+ " "+getEngineVolume();
+    }
+
+    @Override
+    public String pitStop() {
+        return "Заезжаем в бокс, производим замену колес, заправляем, выезжаем из бокса";
+    }
+
+    @Override
+    public float bestTime() {
+        return getBestTime();
+    }
+
+    @Override
+    public float maxSpeed() {
+        return getMaxSpeed();
     }
 }
 
