@@ -1,6 +1,6 @@
 package transport;
 
-public class Auto extends Transport implements Competing{
+public class Auto extends Transport implements Competing {
 
 
     public Auto(String brand, String model, float engineVolume, float bestTime, float maxSpeed) {
@@ -9,28 +9,27 @@ public class Auto extends Transport implements Competing{
 
     @Override
     public void startMoving() {
-        System.out.println("Завести двигатель");
+        System.out.println("Завести двигатель " + getBrand() + " " + getModel());
         System.out.println("Прогреть до необходимой температуры");
-        System.out.println("Включить передачу и подъехать к старту");
-        System.out.println("Тронуться когда загорится зеленый");
+        System.out.println("Подъехать к старту");
+        System.out.println("Начать заезд когда загорится зеленый");
     }
 
     @Override
     public void finishTheMove() {
         System.out.println("Завершить гонку");
         System.out.println("Заехать в бокс");
-        System.out.println("Заглушить двигатель");
-        System.out.println("Покинуть автомобиль");
+        System.out.println("Заглушить двигатель и покинуть автомобиль " + getBrand() + " " + getModel());
     }
 
     @Override
     public String toString() {
-        return getBrand()+ " " + getModel()+ " "+getEngineVolume();
+        return getBrand() + " " + getModel();
     }
 
     @Override
     public String pitStop() {
-        return "Заезжаем в бокс, производим замену колес, заправляем, выезжаем из бокса";
+        return "Заезжаем в бокс, производим замену колес, заправляем, проверяем все технические показатели, если все в норме продолжаем заезд, иначе пытаемся устранить поломку";
     }
 
     @Override

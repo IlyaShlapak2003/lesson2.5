@@ -1,6 +1,7 @@
-import Drive.Drivers;
+import Drive.Driver;
 import transport.Auto;
 import transport.Bus;
+import transport.Transport;
 import transport.Truck;
 
 
@@ -18,8 +19,8 @@ public class Main {
         System.out.println("Лучшее время " + car1.bestTime());
         System.out.println("Максимальная скорость " + car1.maxSpeed());
         System.out.println();
-        Drivers<Auto, Bus, Truck> nicola= new Drivers<>("Васильев", "Николай", "Иванович",true, (byte) 5, car1);
-        nicola.control(car1);
+        Driver<Transport> nicola= new Driver<>("Васильев", "Николай", "Иванович",true, (byte) 5, car1);
+        System.out.println(nicola);
         System.out.println();
 
         Auto car2 = new Auto("Audi",
@@ -68,8 +69,8 @@ public class Main {
         System.out.println("Лучшее время " + bus1.bestTime());
         System.out.println("Максимальная скорость " + bus1.maxSpeed());
         System.out.println();
-        Drivers<Auto, Bus, Truck> ivan= new Drivers<>("Пертов", "Иван", "Васильевич",true, (byte) 5, bus1);
-        ivan.control(bus1);
+        Driver<Transport> ivan= new Driver<>("Пертов", "Иван", "Васильевич",true, (byte) 5, bus1);
+        System.out.println(ivan);
         System.out.println();
 
         Bus bus2=new Bus("ГАЗ","ГАЗель 3221", 2.5f,5,160);
@@ -111,8 +112,8 @@ public class Main {
         System.out.println("Лучшее время " + truck1.bestTime());
         System.out.println("Максимальная скорость " + truck1.maxSpeed());
         System.out.println();
-        Drivers<Auto, Bus, Truck> danil= new Drivers<>("Козлов", "Данил", "Сергеевич",true, (byte) 5, truck1);
-        danil.control(truck1);
+        Driver<Transport> danil= new Driver<>("Козлов", "Данил", "Сергеевич",true, (byte) 5, truck1);
+        System.out.println(danil);
         System.out.println();
 
         Truck truck2 = new Truck("МАЗ","5440М9",13,11,100);

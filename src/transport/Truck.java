@@ -9,28 +9,28 @@ public class Truck extends Transport implements Competing{
 
     @Override
     public void startMoving() {
-        System.out.println("Завести двигатель");
-        System.out.println("Прогреть до необходимой температуры");
-        System.out.println("Включить передачу и подъехать к старту");
-        System.out.println("Тронуться когда загорится зеленый");
+        System.out.println("Заводим двигатель "+ getBrand() +" "+getModel() );
+        System.out.println("Прогреваем до необходимой температуры");
+        System.out.println("Включаем дополнительные устройства и подъезжаем к старту");
+        System.out.println("Начинаем заезд когда загорится зеленый");
     }
 
     @Override
     public void finishTheMove() {
-        System.out.println("Завершить гонку");
-        System.out.println("Заехать в бокс");
-        System.out.println("Заглушить двигатель");
-        System.out.println("Покинуть автомобиль");
+        System.out.println("Завершаем заезд");
+        System.out.println("Заезжаем в бокс");
+        System.out.println("Заглушим двигатель");
+        System.out.println("Покидаем грузовой автомобиль "+getBrand()+" "+getModel());
     }
 
     @Override
     public String toString() {
-        return getBrand()+ " " + getModel()+ " "+getEngineVolume();
+        return getBrand()+ " " + getModel();
     }
 
     @Override
     public String pitStop() {
-        return "Заезжаем в бокс, производим замену колес, заправляем, выезжаем из бокса";
+        return "Заезжаем в бокс, производим замену колес, заправляем, проверяем технические показатели "+getBrand()+" "+getModel() +" выезжаем из бокса";
     }
 
     @Override

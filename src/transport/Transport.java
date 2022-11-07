@@ -2,7 +2,7 @@ package transport;
 
 import java.util.Objects;
 
-public abstract class Transport {
+public abstract class Transport implements Competing {
 
     private static String brand;
     private static String model;
