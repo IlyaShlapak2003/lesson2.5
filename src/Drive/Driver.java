@@ -36,22 +36,18 @@ public class Driver<T extends Transport & Competing> {
         }
     }
 
-    public void startMoving(T Transport) {
-        System.out.println("Завести двигатель " + Transport);
-        System.out.println("Прогреть до необходимой температуры");
-        System.out.println("Включить свет и передачу, тронуться");
+    public void startMoving(T transport) {
+        transport.startMoving();
     }
 
-    public void stop(T Transport) {
-        System.out.println("Остановиться");
-        System.out.println("Заглушить двигатель и выключить свет");
-        System.out.println("Покинуть автомобиль " + Transport);
+    public void stop(T transport) {
+        transport.finishTheMove();
     }
 
-    public void refuelTheCar(T Transport) {
+    public void refuelTheCar(T transport) {
         System.out.println("Заехать на заправку");
-        System.out.println("Заглушить "+ Transport +" и заправиться");
-        System.out.println("Завести " +Transport + "и уехать с заправки");
+        System.out.println("Заглушить "+ transport +" и заправиться");
+        System.out.println("Завести " +transport + "и уехать с заправки");
     }
 
     public String toString() {
