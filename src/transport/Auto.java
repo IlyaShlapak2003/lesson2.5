@@ -2,8 +2,33 @@ package transport;
 
 public class Auto extends Transport implements Competing {
 
+    public enum bodyType {
+        SEDAN("Седан"),
+        HATCHBACK("Хетчбек"),
+        COUPE("Купе"),
+        WAGON("Универсал"),
+        SUV("Внедорожник"),
+        CROSSOVER("Кроссовер"),
+        PICKUP("Пикап"),
+        VAN("Фургон"),
+        MINIVAN("Минивэн");
+        private final String nameOfBodyType;
 
-    public Auto(String brand, String model, float engineVolume, float bestTime, float maxSpeed) {
+        bodyType(String nameOfBodyType) {
+            if (nameOfBodyType == null || nameOfBodyType.isBlank()) {
+                this.nameOfBodyType = "Данные не указаны";
+            } else {
+                this.nameOfBodyType = nameOfBodyType;
+            }
+        }
+
+        public String getNameOfBodyType() {
+            return nameOfBodyType;
+        }
+
+    }
+
+    public Auto(String brand, String model, float engineVolume, float bestTime, float maxSpeed, bodyType nameOfDodyType) {
         super(brand, model, engineVolume, bestTime, maxSpeed);
     }
 
@@ -41,4 +66,6 @@ public class Auto extends Transport implements Competing {
     public float maxSpeed() {
         return getMaxSpeed();
     }
+
+
 }

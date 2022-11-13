@@ -3,7 +3,24 @@ package transport;
 public class Bus extends Transport implements Competing {
 
 
-    public Bus(String brand, String model, float engineVolume, float bestTime, float maxSpeed) {
+    public enum capacitiType {
+        EXTRA_SMALL("До 10 мест"),
+        SMALL("До 25"),
+        MEDIUM("40-50 мест"),
+        LARGE("60-80 мест"),
+        EXTRA_LARGE("100-120 мест");
+        private final String nameOfCapacitiType;
+
+        capacitiType(String nameOfCapacitiType) {
+            if (nameOfCapacitiType == null || nameOfCapacitiType.isBlank()) {
+                this.nameOfCapacitiType = "Данные не указаны";
+            } else {
+                this.nameOfCapacitiType = nameOfCapacitiType;
+            }
+        }
+    }
+
+    public Bus(String brand, String model, float engineVolume, float bestTime, float maxSpeed, capacitiType nameOfCapacitiType) {
         super(brand, model, engineVolume, bestTime, maxSpeed);
     }
 
@@ -20,7 +37,7 @@ public class Bus extends Transport implements Competing {
         System.out.println("Завершаем гонку");
         System.out.println("Заезжаем в бокс");
         System.out.println("Заглушим двигатель автобуса");
-        System.out.println("Покидаем автобус " + getBrand()+ " "+ getModel());
+        System.out.println("Покидаем автобус " + getBrand() + " " + getModel());
     }
 
     @Override
